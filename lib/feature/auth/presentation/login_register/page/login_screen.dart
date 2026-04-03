@@ -1,0 +1,100 @@
+
+import 'package:bookia_store/core/constant/app_images.dart';
+import 'package:bookia_store/core/routes/navigations.dart';
+import 'package:bookia_store/core/routes/routes.dart';
+import 'package:bookia_store/core/styles/colors.dart';
+import 'package:bookia_store/core/styles/text_styles.dart';
+import 'package:bookia_store/core/widgets/custom_svg_picture.dart';
+import 'package:bookia_store/core/widgets/custom_text_form_field.dart';
+import 'package:bookia_store/core/widgets/main_utton.dart';
+import 'package:bookia_store/core/widgets/my_body_view.dart';
+import 'package:bookia_store/core/widgets/password_text_form_field.dart';
+import 'package:bookia_store/feature/auth/presentation/login_register/widgets/social_login.dart';
+import 'package:bookia_store/feature/auth/presentation/widgets/auth_footer.dart';
+import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
+
+class LoginScreen extends StatelessWidget {
+  const LoginScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return 
+       Scaffold(
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          title: Row(
+            children: [
+              GestureDetector(
+                onTap: () => pop(context),
+                child: CustomSvgPicture(path: AppImages.backSvg),
+              ),
+            ],
+          ),
+        ),
+        body: _loginBody(context),
+        bottomNavigationBar: AuthFooter(
+          label: 'Don\'t have an account?',
+          buttonLabel: 'Sign Up',
+          onTap: () {
+            pushReplacement(context, Routes.register);
+          },
+        ),
+      );
+    
+  }
+
+  MyBodyView _loginBody(BuildContext context) {
+    return MyBodyView(
+      child: SingleChildScrollView(
+        child: Form(
+          autovalidateMode: AutovalidateMode.onUnfocus,
+          child: Column(
+            children: [
+              Text(
+                'Welcome back! Glad to see you, Again!',
+                style: TextStyles.headline,
+              ),
+              Gap(32),
+              CustomTextFormField(
+                hintText: 'Enter your email',
+               
+              ),
+              Gap(16),
+              PasswordTextFormField(
+                hintText: 'Enter your password',
+               
+              ),
+              Gap(10),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  TextButton(
+                    onPressed: () {
+                     
+                    },
+                    child: Text(
+                      'Forgot Password?',
+                      style: TextStyles.caption1.copyWith(
+                        color: AppColors.darkGreyColor,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Gap(30),
+              MainButton(
+                text: 'Login',
+                onPressed: () {
+                
+                },
+              ),
+              Gap(30),
+              SocialLogin(),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}

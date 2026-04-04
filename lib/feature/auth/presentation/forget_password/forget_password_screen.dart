@@ -1,4 +1,3 @@
-
 import 'package:bookia_store/core/constant/app_images.dart';
 import 'package:bookia_store/core/routes/navigations.dart';
 import 'package:bookia_store/core/styles/colors.dart';

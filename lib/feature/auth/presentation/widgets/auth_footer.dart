@@ -1,4 +1,3 @@
-
 import 'package:bookia_store/core/styles/colors.dart';
 import 'package:bookia_store/core/styles/text_styles.dart';
 import 'package:flutter/material.dart';

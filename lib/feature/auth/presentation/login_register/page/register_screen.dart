@@ -1,5 +1,3 @@
-
-
 import 'package:bookia_store/core/constant/app_images.dart';
 import 'package:bookia_store/core/routes/navigations.dart';
 import 'package:bookia_store/core/routes/routes.dart';
@@ -18,27 +16,26 @@ class RegisterScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-        appBar: AppBar(
-          automaticallyImplyLeading: false,
-          title: Row(
-            children: [
-              GestureDetector(
-                onTap: () => pop(context),
-                child: CustomSvgPicture(path: AppImages.backSvg),
-              ),
-            ],
-          ),
+    return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        title: Row(
+          children: [
+            GestureDetector(
+              onTap: () => pop(context),
+              child: CustomSvgPicture(path: AppImages.backSvg),
+            ),
+          ],
         ),
-        body: _registerBody(context),
-        bottomNavigationBar: AuthFooter(
-          label: 'Already have an account?',
-          buttonLabel: 'Sign in',
-          onTap: () {
-            pushReplacement(context, Routes.login);
-          },
-        ),
-      
+      ),
+      body: _registerBody(context),
+      bottomNavigationBar: AuthFooter(
+        label: 'Already have an account?',
+        buttonLabel: 'Sign in',
+        onTap: () {
+          pushReplacement(context, Routes.login);
+        },
+      ),
     );
   }
 
@@ -54,32 +51,15 @@ class RegisterScreen extends StatelessWidget {
                 style: TextStyles.headline,
               ),
               Gap(32),
-              CustomTextFormField(
-                hintText: 'Full Name',
-               
-              ),
+              CustomTextFormField(hintText: 'Full Name'),
               Gap(16),
-              CustomTextFormField(
-                hintText: 'Email',
-              
-              ),
+              CustomTextFormField(hintText: 'Email'),
               Gap(16),
-              PasswordTextFormField(
-                hintText: 'Password',
-                
-              ),
+              PasswordTextFormField(hintText: 'Password'),
               Gap(16),
-              PasswordTextFormField(
-                hintText: 'Confirm Password',
-              
-              ),
+              PasswordTextFormField(hintText: 'Confirm Password'),
               Gap(30),
-              MainButton(
-                text: 'Register',
-                onPressed: () {
-                  
-                },
-              ),
+              MainButton(text: 'Register', onPressed: () {}),
             ],
           ),
         ),

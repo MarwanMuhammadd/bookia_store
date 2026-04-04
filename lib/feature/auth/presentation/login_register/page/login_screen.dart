@@ -1,4 +1,3 @@
-
 import 'package:bookia_store/core/constant/app_images.dart';
 import 'package:bookia_store/core/routes/navigations.dart';
 import 'package:bookia_store/core/routes/routes.dart';
@@ -19,29 +18,27 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return 
-       Scaffold(
-        appBar: AppBar(
-          automaticallyImplyLeading: false,
-          title: Row(
-            children: [
-              GestureDetector(
-                onTap: () => pop(context),
-                child: CustomSvgPicture(path: AppImages.backSvg),
-              ),
-            ],
-          ),
+    return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        title: Row(
+          children: [
+            GestureDetector(
+              onTap: () => pop(context),
+              child: CustomSvgPicture(path: AppImages.backSvg),
+            ),
+          ],
         ),
-        body: _loginBody(context),
-        bottomNavigationBar: AuthFooter(
-          label: 'Don\'t have an account?',
-          buttonLabel: 'Sign Up',
-          onTap: () {
-            pushReplacement(context, Routes.register);
-          },
-        ),
-      );
-    
+      ),
+      body: _loginBody(context),
+      bottomNavigationBar: AuthFooter(
+        label: 'Don\'t have an account?',
+        buttonLabel: 'Sign Up',
+        onTap: () {
+          pushReplacement(context, Routes.register);
+        },
+      ),
+    );
   }
 
   MyBodyView _loginBody(BuildContext context) {
@@ -56,23 +53,15 @@ class LoginScreen extends StatelessWidget {
                 style: TextStyles.headline,
               ),
               Gap(32),
-              CustomTextFormField(
-                hintText: 'Enter your email',
-               
-              ),
+              CustomTextFormField(hintText: 'Enter your email'),
               Gap(16),
-              PasswordTextFormField(
-                hintText: 'Enter your password',
-               
-              ),
+              PasswordTextFormField(hintText: 'Enter your password'),
               Gap(10),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   TextButton(
-                    onPressed: () {
-                     
-                    },
+                    onPressed: () {},
                     child: Text(
                       'Forgot Password?',
                       style: TextStyles.caption1.copyWith(
@@ -83,12 +72,7 @@ class LoginScreen extends StatelessWidget {
                 ],
               ),
               Gap(30),
-              MainButton(
-                text: 'Login',
-                onPressed: () {
-                
-                },
-              ),
+              MainButton(text: 'Login', onPressed: () {}),
               Gap(30),
               SocialLogin(),
             ],

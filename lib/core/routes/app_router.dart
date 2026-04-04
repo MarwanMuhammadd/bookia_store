@@ -1,4 +1,3 @@
-
 import 'package:bookia_store/core/routes/routes.dart';
 import 'package:bookia_store/feature/auth/presentation/forget_password/forget_password_screen.dart';
 import 'package:bookia_store/feature/auth/presentation/login_register/page/login_screen.dart';
@@ -20,7 +19,7 @@ class AppRouter {
       ),
       GoRoute(
         path: Routes.login,
-        builder: (context, state) =>const LoginScreen()
+        builder: (context, state) => const LoginScreen(),
       ),
       GoRoute(
         path: Routes.register,

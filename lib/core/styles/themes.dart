@@ -2,6 +2,7 @@ import 'package:bookia_store/core/constant/app_fonts.dart';
 import 'package:bookia_store/core/styles/colors.dart';
 import 'package:bookia_store/core/styles/text_styles.dart';
 import 'package:flutter/material.dart';
+import 'package:pinput/pinput.dart';
 
 abstract class AppThemes {
   static ThemeData get lightTheme => ThemeData(
@@ -64,6 +65,27 @@ abstract class AppThemes {
       seedColor: AppColors.primaryColor,
       // text color
       onSurface: AppColors.darkColor,
+    ),
+  );
+
+  static PinTheme get defaultPinTheme => PinTheme(
+    width: 56,
+    height: 60,
+    textStyle: TextStyles.title.copyWith(
+      color: AppColors.darkColor,
+      fontWeight: FontWeight.w700,
+    ),
+    decoration: BoxDecoration(
+      color: AppColors.accentColor,
+      borderRadius: BorderRadius.circular(8),
+      border: Border.all(color: AppColors.borderColor),
+    ),
+  );
+
+  static PinTheme get focusedPinTheme => defaultPinTheme.copyWith(
+    decoration: defaultPinTheme.decoration!.copyWith(
+      color: AppColors.backgroundColor,
+      border: Border.all(color: AppColors.primaryColor, width: 1.5),
     ),
   );
 }

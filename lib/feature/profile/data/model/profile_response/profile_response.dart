@@ -1,6 +1,5 @@
 import 'package:bookia_store/feature/auth/data/models/respone_auth/user.dart';
 
-
 class ProfileResponse {
   User? data;
   String? message;

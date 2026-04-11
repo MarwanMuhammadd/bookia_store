@@ -3,14 +3,23 @@ class AuthParams {
   String? password;
   String? name;
   String? passwordConfirmation;
-  AuthParams({this.email, this.password, this.name, this.passwordConfirmation});
+  String? verifyCode;
+  AuthParams({
+    this.email,
+    this.password,
+    this.name,
+    this.passwordConfirmation,
+    this.verifyCode,
+  });
 
   Map<String, dynamic> toJson() {
-    return {
-      "name": name,
-      "email": email,
-      "password": password,
-      "password_confirmation": passwordConfirmation,
-    };
+    final Map<String, dynamic> data = {};
+    if (name != null) data["name"] = name;
+    if (email != null) data["email"] = email;
+    if (password != null) data["password"] = password;
+    if (passwordConfirmation != null)
+      data["password_confirmation"] = passwordConfirmation;
+    if (verifyCode != null) data["verify_code"] = verifyCode;
+    return data;
   }
 }

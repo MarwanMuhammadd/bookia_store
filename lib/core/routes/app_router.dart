@@ -1,7 +1,9 @@
 import 'package:bookia_store/core/routes/routes.dart';
 import 'package:bookia_store/feature/auth/presentation/cubit/auth_cubit.dart';
-import 'package:bookia_store/feature/auth/presentation/forget_password/forget_cubit/forget_cubit.dart';
-import 'package:bookia_store/feature/auth/presentation/forget_password/presentation/forget_password_screen.dart';
+import 'package:bookia_store/feature/check_password/presentation/cubit/forget_cubit.dart';
+import 'package:bookia_store/feature/check_password/presentation/cubit/otp_cubit.dart';
+import 'package:bookia_store/feature/check_password/presentation/forget_password/pages/forget_password_screen.dart';
+import 'package:bookia_store/feature/check_password/presentation/pages/otp_verification_screen.dart';
 import 'package:bookia_store/feature/auth/presentation/login_register/page/login_screen.dart';
 import 'package:bookia_store/feature/auth/presentation/login_register/page/register_screen.dart';
 import 'package:bookia_store/feature/main/main_app_screen.dart';
@@ -53,6 +55,13 @@ class AppRouter {
         builder: (context, state) => BlocProvider(
           create: (context) => ForgetCubit(),
           child: ForgotPasswordScreen(email: state.extra as String? ?? ''),
+        ),
+      ),
+      GoRoute(
+        path: Routes.otpVerification,
+        builder: (context, state) => BlocProvider(
+          create: (context) => OtpCubit(),
+          child: OtpVerificationScreen(email: state.extra as String? ?? ''),
         ),
       ),
     ],

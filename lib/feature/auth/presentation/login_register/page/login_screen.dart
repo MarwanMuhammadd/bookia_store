@@ -1,7 +1,4 @@
-import 'dart:developer';
-
 import 'package:bookia_store/core/constant/app_images.dart';
-import 'package:bookia_store/core/routes/app_router.dart';
 import 'package:bookia_store/core/routes/navigations.dart';
 import 'package:bookia_store/core/routes/routes.dart';
 import 'package:bookia_store/core/styles/colors.dart';
@@ -103,7 +100,7 @@ class LoginScreen extends StatelessWidget {
                 children: [
                   TextButton(
                     onPressed: () {
-                      pushReplacement(
+                      pushTo(
                         context,
                         Routes.forgotPassword,
                         extra: cubit.emailController.text.trim(),
@@ -111,6 +108,27 @@ class LoginScreen extends StatelessWidget {
                     },
                     child: Text(
                       'Forgot Password?',
+                      style: TextStyles.caption1.copyWith(
+                        color: AppColors.darkGreyColor,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 10),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  TextButton(
+                    onPressed: () {
+                      pushTo(
+                        context,
+                        Routes.otpVerification,
+                        //extra: cubit.emailController.text.trim(),
+                      );
+                    },
+                    child: Text(
+                      'OTP?',
                       style: TextStyles.caption1.copyWith(
                         color: AppColors.darkGreyColor,
                       ),

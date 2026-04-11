@@ -2,11 +2,13 @@ import 'dart:developer';
 
 import 'package:bookia_store/core/service/Apis/apis.dart';
 import 'package:bookia_store/core/service/Apis/dio_provider.dart';
-import 'package:bookia_store/feature/auth/data/models/auth_params.dart';
-import 'package:bookia_store/feature/auth/presentation/forget_password/data/models/forget_password/forget_password.dart';
+import 'package:bookia_store/feature/check_password/data/models/forget_password/forget_password.dart';
+import 'package:bookia_store/feature/check_password/data/models/forget_password_params.dart';
 
 class ForgetPasswordAuth {
-  static Future<ForgetPassword?> forgetPassword(AuthParams params) async {
+  static Future<ForgetPassword?> forgetPassword(
+    ForgetPasswordParams params,
+  ) async {
     try {
       var response = await DioProvider.post(
         endPoint: Apis.forgetPassword,

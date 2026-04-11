@@ -31,9 +31,9 @@ class SplashScreen extends StatelessWidget {
     return BlocListener<SplashCubit, SplashStates>(
       listener: (context, state) {
         if (state is SplashSucessState) {
-          pushReplacement(context, Routes.mainApp);
-        } else if (state is SplashErrorState) {
           pushReplacement(context, Routes.welcome);
+        } else if (state is SplashErrorState) {
+          pushReplacement(context, Routes.mainApp);
         }
       },
       child: Scaffold(
